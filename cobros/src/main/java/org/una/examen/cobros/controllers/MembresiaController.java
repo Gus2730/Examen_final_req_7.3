@@ -74,9 +74,9 @@ public class MembresiaController {
     @ResponseBody
     public ResponseEntity<?> update(@PathVariable(value = "id") Long id, @RequestBody MembresiaDTO MembresiaDTO) {
         try {
-            Optional<MembresiaDTO> clienteUpdated = IMembresiaService.update(MembresiaDTO, id);
-            if (clienteUpdated.isPresent()) {
-                return new ResponseEntity(clienteUpdated, HttpStatus.OK);
+            Optional<MembresiaDTO> membresiaUpdated = IMembresiaService.update(MembresiaDTO, id);
+            if (membresiaUpdated.isPresent()) {
+                return new ResponseEntity(membresiaUpdated, HttpStatus.OK);
             } else {
                 return new ResponseEntity(HttpStatus.NOT_FOUND);
             }

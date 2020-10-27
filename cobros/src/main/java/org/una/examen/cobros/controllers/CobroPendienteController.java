@@ -58,7 +58,7 @@ public class CobroPendienteController {
         }
     }
 
-    @GetMapping("/cliente/identificacion/{cedula}")
+    @GetMapping("/identificacion/{cedula}")
     public @ResponseBody
     ResponseEntity<?> findByIdIdentificacion(@PathVariable(value = "cedula") String identificacion) {
         try {
