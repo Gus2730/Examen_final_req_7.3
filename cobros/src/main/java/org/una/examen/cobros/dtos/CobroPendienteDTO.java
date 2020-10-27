@@ -19,7 +19,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Cobro_pendiente {
+public class CobroPendienteDTO {
     private Long id;
     
     private String tipo;

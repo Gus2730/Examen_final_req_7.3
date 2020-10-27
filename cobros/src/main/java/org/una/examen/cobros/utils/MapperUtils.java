@@ -8,7 +8,7 @@ import org.modelmapper.convention.MatchingStrategies;
 
 /**
  *
- * @author Bosco
+ * @author cfugu
  */
 public class MapperUtils {
 

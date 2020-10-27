@@ -34,7 +34,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CobrosPendientes implements Serializable {
+public class CobroPendiente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
