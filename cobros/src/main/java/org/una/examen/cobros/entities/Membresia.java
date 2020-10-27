@@ -38,7 +38,7 @@ public class Membresia implements Serializable {
 
     @Column(name = "descripcion", length = 45)
     private String descripcion;
-    
+
     @Column(length = 20)
     private String periodicidad;
 

@@ -6,6 +6,7 @@
 package org.una.examen.cobros.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.una.examen.cobros.entities.Cliente;
 
 /**
  *

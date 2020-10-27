@@ -7,6 +7,7 @@ package org.una.examen.cobros.services;
 
 import java.util.List;
 import java.util.Optional;
+import org.una.examen.cobros.dtos.MembresiaDTO;
 
 /**
  *

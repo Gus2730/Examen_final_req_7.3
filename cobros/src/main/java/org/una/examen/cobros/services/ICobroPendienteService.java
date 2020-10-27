@@ -7,12 +7,13 @@ package org.una.examen.cobros.services;
 
 import java.util.List;
 import java.util.Optional;
+import org.una.examen.cobros.dtos.CobroPendienteDTO;
 
 /**
  *
  * @author cfugu
  */
-public interface ICobroPendiente {
+public interface ICobroPendienteService {
 
     public Optional<List<CobroPendienteDTO>> findAll();
 
@@ -21,4 +22,7 @@ public interface ICobroPendiente {
     public CobroPendienteDTO create(CobroPendienteDTO cobro);
 
     public Optional<CobroPendienteDTO> update(CobroPendienteDTO cobro, Long id);
+    
+    public Optional<List<CobroPendienteDTO>> findByIdCliente(Long id);
+    
 }

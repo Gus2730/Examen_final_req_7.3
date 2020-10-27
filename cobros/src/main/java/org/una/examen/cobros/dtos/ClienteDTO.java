@@ -5,7 +5,6 @@
  */
 package org.una.examen.cobros.dtos;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

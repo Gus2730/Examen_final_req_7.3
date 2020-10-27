@@ -5,10 +5,57 @@
  */
 package org.una.examen.cobros.services;
 
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.una.examen.cobros.dtos.ClienteDTO;
+import org.una.examen.cobros.entities.Cliente;
+import org.una.examen.cobros.repositories.IClienteRepository;
+import org.una.examen.cobros.utils.ConversionLista;
+import org.una.examen.cobros.utils.MapperUtils;
+
 /**
  *
  * @author cfugu
  */
-public class ClienteServiceImplementation {
-    
+@Service
+public class ClienteServiceImplementation implements IClienteService {
+
+    @Autowired
+    private IClienteRepository IClienteRepository;
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<List<ClienteDTO>> findAll() {
+        return (Optional<List<ClienteDTO>>) ConversionLista.findList((IClienteRepository.findAll()), ClienteDTO.class);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<ClienteDTO> findById(Long id) {
+        return (Optional<ClienteDTO>) ConversionLista.oneToDto(IClienteRepository.findById(id), ClienteDTO.class);
+    }
+
+    @Override
+    @Transactional
+    public ClienteDTO create(ClienteDTO cliente) {
+        Cliente client = MapperUtils.EntityFromDto(cliente, Cliente.class);
+        client = IClienteRepository.save(client);
+        return MapperUtils.DtoFromEntity(client, ClienteDTO.class);
+    }
+
+    @Override
+    @Transactional
+    public Optional<ClienteDTO> update(ClienteDTO cliente, Long id) {
+        if (IClienteRepository.findById(id).isPresent()) {
+            Cliente client = MapperUtils.EntityFromDto(cliente, Cliente.class);
+            client = IClienteRepository.save(client);
+            return Optional.ofNullable(MapperUtils.DtoFromEntity(client, ClienteDTO.class));
+        } else {
+            return null;
+        }
+    }
+
 }
