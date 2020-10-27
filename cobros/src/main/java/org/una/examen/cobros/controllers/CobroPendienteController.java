@@ -58,6 +58,17 @@ public class CobroPendienteController {
         }
     }
 
+    @GetMapping("/cliente/identificacion/{cedula}")
+    public @ResponseBody
+    ResponseEntity<?> findByIdIdentificacion(@PathVariable(value = "cedula") String identificacion) {
+        try {
+            return new ResponseEntity<>(ICobroPendienteService.findByIdIdentificacion(identificacion), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable(value = "id") Long id) {
         try {

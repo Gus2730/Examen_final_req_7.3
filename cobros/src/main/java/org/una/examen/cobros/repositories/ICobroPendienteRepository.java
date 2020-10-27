@@ -19,4 +19,7 @@ public interface ICobroPendienteRepository extends JpaRepository<CobroPendiente,
 
     @Query(value = "SELECT t FROM CobroPendiente t JOIN t.clientesId po where po.id=:id")
     public List<CobroPendiente> findByIdCliente(@Param("id") Long id);
+    
+    @Query(value = "SELECT t FROM CobroPendiente t JOIN t.clientesId po where po.identificacion=:identificacion")
+    public List<CobroPendiente> findByIdIdentificacion(@Param("identificacion") String identificacion);
 }

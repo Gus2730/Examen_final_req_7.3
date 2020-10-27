@@ -25,4 +25,6 @@ public interface ICobroPendienteService {
     
     public Optional<List<CobroPendienteDTO>> findByIdCliente(Long id);
     
+    public Optional<List<CobroPendienteDTO>> findByIdIdentificacion(String identificacion);
+    
 }

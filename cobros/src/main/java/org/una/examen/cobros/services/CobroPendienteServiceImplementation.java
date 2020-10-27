@@ -64,4 +64,9 @@ public class CobroPendienteServiceImplementation implements ICobroPendienteServi
         return (Optional<List<CobroPendienteDTO>>) ConversionLista.findList((ICobroPendienteRepository.findByIdCliente(id)), CobroPendienteDTO.class);
     }
 
+    @Override
+    public Optional<List<CobroPendienteDTO>> findByIdIdentificacion(String identificacion) {
+        return (Optional<List<CobroPendienteDTO>>) ConversionLista.findList((ICobroPendienteRepository.findByIdIdentificacion(identificacion)), CobroPendienteDTO.class);
+    }
+
 }
