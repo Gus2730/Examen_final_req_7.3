@@ -18,7 +18,7 @@ import org.una.examen.cobros.entities.Cobro;
  * @author cfugu
  */
 public interface IClienteRepository extends JpaRepository<Cliente, Long>{
-    @Query(value = "SELECT t FROM Cliente t  where t.id=:id")
+    @Query(value = "SELECT t FROM Cliente t  where t.identificacion=:id")
     public Optional<Cliente> findByIdentificacion(@Param("id") String id);
 
 }
