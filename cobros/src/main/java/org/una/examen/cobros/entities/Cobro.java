@@ -44,7 +44,7 @@ public class Cobro implements Serializable {
     private int periodo;
 
     @Column(length = 10)
-    private String ano;
+    private String anno;
 
     @Column
     private Double monto;

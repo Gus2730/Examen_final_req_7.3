@@ -36,13 +36,13 @@ public class Membresia implements Serializable {
     @Column
     private Double monto;
 
-    @Column(name = "descripcion", length = 45)
+    @Column(name = "descripcion", length = 50)
     private String descripcion;
 
     @Column(length = 20)
     private String periodicidad;
     
-    @Column(name = "tipo_servicio", length = 10)
+    @Column(name = "tipo_servicio", length = 20)
     private String tipo;
 
     private static final long serialVersionUID = 1L;

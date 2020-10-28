@@ -25,7 +25,7 @@ public class CobroDTO {
 
     private int periodo;
 
-    private String ano;
+    private String anno;
 
     private Double monto;
 
