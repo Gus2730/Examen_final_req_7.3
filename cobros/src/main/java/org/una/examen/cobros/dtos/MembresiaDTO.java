@@ -27,5 +27,7 @@ public class MembresiaDTO {
     private String descripcion;
     
     private String periodicidad;
+    
+    private String tipo;
 
 }

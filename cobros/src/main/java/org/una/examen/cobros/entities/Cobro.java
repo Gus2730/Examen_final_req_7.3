@@ -43,9 +43,6 @@ public class Cobro implements Serializable {
     @Column
     private int periodo;
 
-    @Column(name = "tipo_servicio", length = 10)
-    private String tipo;
-
     @Column(length = 10)
     private String ano;
 
@@ -60,6 +57,6 @@ public class Cobro implements Serializable {
     @ManyToOne
     @JoinColumn(name = "exa_gvq_clientes_id")
     private Cliente clientesId;
-    
+
     private static final long serialVersionUID = 1L;
 }

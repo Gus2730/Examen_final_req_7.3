@@ -41,6 +41,9 @@ public class Membresia implements Serializable {
 
     @Column(length = 20)
     private String periodicidad;
+    
+    @Column(name = "tipo_servicio", length = 10)
+    private String tipo;
 
     private static final long serialVersionUID = 1L;
 }

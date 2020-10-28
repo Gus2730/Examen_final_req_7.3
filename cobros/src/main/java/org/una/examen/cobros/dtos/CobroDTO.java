@@ -20,20 +20,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class CobroDTO {
+
     private Long id;
-    
-    private String tipo;
 
     private int periodo;
-    
+
     private String ano;
-    
+
     private Double monto;
-    
+
     private ClienteDTO clientesId;
 
     private Date fechaVencimiento;
 
-
-    
 }
