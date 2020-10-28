@@ -17,6 +17,8 @@ public interface IMembresiaService {
 
     public Optional<List<MembresiaDTO>> findAll();
 
+    public Optional<List<MembresiaDTO>> findByCliente(Long id);
+
     public Optional<MembresiaDTO> findById(Long id);
 
     public MembresiaDTO create(MembresiaDTO membresia);

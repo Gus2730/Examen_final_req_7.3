@@ -56,6 +56,15 @@ public class MembresiaController {
         }
 
     }
+    @GetMapping("cliente/{id}")
+    public ResponseEntity<?> findByCliente(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(IMembresiaService.findByCliente(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/")

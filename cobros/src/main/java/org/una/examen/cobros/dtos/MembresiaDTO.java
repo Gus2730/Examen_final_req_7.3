@@ -25,9 +25,11 @@ public class MembresiaDTO {
     private Double monto;
 
     private String descripcion;
-    
+
     private String periodicidad;
-    
+
     private String tipo;
+
+    private ClienteDTO clientesId;
 
 }

@@ -27,6 +27,5 @@ public class ClienteDTO {
     
     private String nombre;
     
-    private MembresiaDTO membresiasId;
 
 }

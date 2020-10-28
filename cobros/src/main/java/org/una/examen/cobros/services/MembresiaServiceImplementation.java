@@ -22,22 +22,22 @@ import org.una.examen.cobros.utils.MapperUtils;
  */
 @Service
 public class MembresiaServiceImplementation implements IMembresiaService {
-
+    
     @Autowired
     private IMembresiaRepository IMembresiaRepository;
-
+    
     @Override
     @Transactional(readOnly = true)
     public Optional<List<MembresiaDTO>> findAll() {
         return (Optional<List<MembresiaDTO>>) ConversionLista.findList((IMembresiaRepository.findAll()), MembresiaDTO.class);
     }
-
+    
     @Override
     @Transactional(readOnly = true)
     public Optional<MembresiaDTO> findById(Long id) {
         return (Optional<MembresiaDTO>) ConversionLista.oneToDto(IMembresiaRepository.findById(id), MembresiaDTO.class);
     }
-
+    
     @Override
     @Transactional
     public MembresiaDTO create(MembresiaDTO membresia) {
@@ -45,7 +45,7 @@ public class MembresiaServiceImplementation implements IMembresiaService {
         membr = IMembresiaRepository.save(membr);
         return MapperUtils.DtoFromEntity(membr, MembresiaDTO.class);
     }
-
+    
     @Override
     @Transactional
     public Optional<MembresiaDTO> update(MembresiaDTO membresia, Long id) {
@@ -57,4 +57,11 @@ public class MembresiaServiceImplementation implements IMembresiaService {
             return null;
         }
     }
+
+    @Override
+    public Optional<List<MembresiaDTO>> findByCliente(Long id) {
+       return (Optional<List<MembresiaDTO>>) ConversionLista.findList((IMembresiaRepository.findByCliente(id)), MembresiaDTO.class);
+    }
+    
+    
 }
