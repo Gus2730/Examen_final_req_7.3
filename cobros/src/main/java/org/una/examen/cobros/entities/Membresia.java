@@ -43,10 +43,7 @@ public class Membresia implements Serializable {
 
     @Column(length = 20)
     private String periodicidad;
-    
-    @Column(name = "tipo_servicio", length = 20)
-    private String tipo;
-    
+      
     @ManyToOne
     @JoinColumn(name = "exa_gvq_clientes_id")
     private Cliente clientesId;

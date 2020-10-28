@@ -68,6 +68,16 @@ public class CobroController {
             return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @GetMapping("/identificacion-tipo/{id}/{tipo}")
+    public @ResponseBody
+    ResponseEntity<?> findByIdentificacionAndServicio(@PathVariable(value = "id") String identificacion,@PathVariable(value = "tipo") String tipo) {
+        try {
+            return new ResponseEntity<>(ICobroPendienteService.findByIdentificacionAndServicio(identificacion, tipo), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable(value = "id") Long id) {

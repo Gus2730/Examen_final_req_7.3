@@ -69,4 +69,9 @@ public class CobroServiceImplementation implements ICobroService {
         return (Optional<List<CobroDTO>>) ConversionLista.findList((ICobroPendienteRepository.findByIdIdentificacion(identificacion)), CobroDTO.class);
     }
 
+    @Override
+    public Optional<List<CobroDTO>> findByIdentificacionAndServicio(String identificacion, String tipo) {
+         return (Optional<List<CobroDTO>>) ConversionLista.findList((ICobroPendienteRepository.findByIdentificacionAndServicio(identificacion, tipo)), CobroDTO.class);
+    }
+
 }

@@ -19,7 +19,10 @@ public interface ICobroRepository extends JpaRepository<Cobro, Long> {
 
     @Query(value = "SELECT t FROM Cobro t JOIN t.clientesId po where po.id=:id")
     public List<Cobro> findByIdCliente(@Param("id") Long id);
-    
+
     @Query(value = "SELECT t FROM Cobro t JOIN t.clientesId po where po.identificacion=:identificacion")
     public List<Cobro> findByIdIdentificacion(@Param("identificacion") String identificacion);
+
+    @Query(value = "SELECT t FROM Cobro t JOIN t.clientesId po where po.identificacion=:identificacion and t.tipo=:tipo")
+    public List<Cobro> findByIdentificacionAndServicio(@Param("identificacion") String identificacion, @Param("tipo") String tipo);
 }

@@ -53,6 +53,9 @@ public class Cobro implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
     private Date fechaVencimiento;
+    
+    @Column(name = "tipo_servicio", length = 50)
+    private String tipo;
 
     @ManyToOne
     @JoinColumn(name = "exa_gvq_clientes_id")

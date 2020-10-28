@@ -22,9 +22,11 @@ public interface ICobroService {
     public CobroDTO create(CobroDTO cobro);
 
     public Optional<CobroDTO> update(CobroDTO cobro, Long id);
-    
+
     public Optional<List<CobroDTO>> findByIdCliente(Long id);
-    
+
     public Optional<List<CobroDTO>> findByIdIdentificacion(String identificacion);
-    
+
+    public Optional<List<CobroDTO>> findByIdentificacionAndServicio(String identificacion,String tipo);
+
 }

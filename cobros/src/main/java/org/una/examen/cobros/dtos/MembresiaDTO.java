@@ -28,8 +28,6 @@ public class MembresiaDTO {
 
     private String periodicidad;
 
-    private String tipo;
-
     private ClienteDTO clientesId;
 
 }

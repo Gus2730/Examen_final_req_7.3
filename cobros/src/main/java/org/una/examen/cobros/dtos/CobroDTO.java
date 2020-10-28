@@ -29,6 +29,8 @@ public class CobroDTO {
 
     private Double monto;
 
+    private String tipo;
+
     private ClienteDTO clientesId;
 
     private Date fechaVencimiento;

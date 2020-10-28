@@ -56,7 +56,7 @@ public class MembresiaController {
         }
 
     }
-    @GetMapping("cliente/{id}")
+    @GetMapping("/cliente/{id}")
     public ResponseEntity<?> findByCliente(@PathVariable(value = "id") Long id) {
         try {
             return new ResponseEntity(IMembresiaService.findByCliente(id), HttpStatus.OK);
