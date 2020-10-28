@@ -19,6 +19,7 @@ import org.una.examen.cobros.entities.Membresia;
  */
 public interface IMembresiaRepository extends JpaRepository<Membresia, Long> {
 
-    @Query(value = "SELECT t FROM Membresia t  where t.clientesId=:id")
+//    @Query(value = "SELECT t FROM Membresia t  where t.clientesId=:id")
+    @Query("SELECT u FROM Membresia u LEFT JOIN u.clientesId d WHERE  d.id=:id")
     public List<Membresia> findByCliente(@Param("id") Long id);
 }
