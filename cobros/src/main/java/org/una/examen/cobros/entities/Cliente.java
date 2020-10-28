@@ -41,6 +41,9 @@ public class Cliente implements Serializable {
     @Column(length = 15, unique = true)
     private String telefono;
     
+    @Column(length = 50)
+    private String nombre;
+    
     @ManyToOne
     @JoinColumn(name = "exa_gvq_membresias_id")
     private Membresia membresiasId;

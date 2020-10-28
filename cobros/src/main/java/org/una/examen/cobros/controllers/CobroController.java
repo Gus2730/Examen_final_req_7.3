@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.una.examen.cobros.dtos.CobroPendienteDTO;
+import org.una.examen.cobros.dtos.CobroDTO;
 import org.una.examen.cobros.services.IClienteService;
-import org.una.examen.cobros.services.ICobroPendienteService;
+import org.una.examen.cobros.services.ICobroService;
 
 /**
  *
@@ -31,10 +31,10 @@ import org.una.examen.cobros.services.ICobroPendienteService;
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @RestController
 @RequestMapping("/cobros_pendientes")
-public class CobroPendienteController {
+public class CobroController {
 
     @Autowired
-    private ICobroPendienteService ICobroPendienteService;
+    private ICobroService ICobroPendienteService;
 
     @GetMapping()
     public @ResponseBody
@@ -82,7 +82,7 @@ public class CobroPendienteController {
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/")
     @ResponseBody
-    public ResponseEntity<?> create(@RequestBody CobroPendienteDTO CobroPendienteDTO) {
+    public ResponseEntity<?> create(@RequestBody CobroDTO CobroPendienteDTO) {
 
         try {
             return new ResponseEntity(ICobroPendienteService.create(CobroPendienteDTO), HttpStatus.CREATED);
@@ -94,9 +94,9 @@ public class CobroPendienteController {
 
     @PutMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> update(@PathVariable(value = "id") Long id, @RequestBody CobroPendienteDTO CobroPendienteDTO) {
+    public ResponseEntity<?> update(@PathVariable(value = "id") Long id, @RequestBody CobroDTO CobroPendienteDTO) {
         try {
-            Optional<CobroPendienteDTO> clienteUpdated = ICobroPendienteService.update(CobroPendienteDTO, id);
+            Optional<CobroDTO> clienteUpdated = ICobroPendienteService.update(CobroPendienteDTO, id);
             if (clienteUpdated.isPresent()) {
                 return new ResponseEntity(clienteUpdated, HttpStatus.OK);
             } else {

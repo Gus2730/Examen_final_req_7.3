@@ -29,19 +29,19 @@ import lombok.ToString;
  * @author cfugu
  */
 @Entity
-@Table(name = "exa_gvq_cobros_pendientes")
+@Table(name = "exa_gvq_cobros")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CobroPendiente implements Serializable {
+public class Cobro implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 20)
-    private String periodo;
+    @Column
+    private int periodo;
 
     @Column(name = "tipo_servicio", length = 10)
     private String tipo;

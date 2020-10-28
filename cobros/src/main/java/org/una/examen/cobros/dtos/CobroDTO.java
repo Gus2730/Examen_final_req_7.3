@@ -19,12 +19,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CobroPendienteDTO {
+public class CobroDTO {
     private Long id;
     
     private String tipo;
 
-    private String periodo;
+    private int periodo;
     
     private String ano;
     
