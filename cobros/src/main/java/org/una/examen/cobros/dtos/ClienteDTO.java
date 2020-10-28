@@ -25,6 +25,8 @@ public class ClienteDTO {
 
     private String telefono;
     
+    private String nombre;
+    
     private MembresiaDTO membresiasId;
 
 }
