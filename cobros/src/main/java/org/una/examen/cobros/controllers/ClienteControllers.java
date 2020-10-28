@@ -57,6 +57,15 @@ public class ClienteControllers {
         }
 
     }
+    @GetMapping("/identificacion/{id}")
+    public ResponseEntity<?> findByIdentificacion(@PathVariable(value = "id") String id) {
+        try {
+            return new ResponseEntity(IClienteService.findByIdentificacion(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/")

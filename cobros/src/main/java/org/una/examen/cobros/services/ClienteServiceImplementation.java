@@ -58,4 +58,10 @@ public class ClienteServiceImplementation implements IClienteService {
         }
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<ClienteDTO> findByIdentificacion(String id) {
+         return (Optional<ClienteDTO>) ConversionLista.oneToDto(IClienteRepository.findByIdentificacion(id), ClienteDTO.class);
+    }
+
 }

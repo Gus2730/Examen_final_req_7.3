@@ -18,6 +18,8 @@ public interface IClienteService {
     public Optional<List<ClienteDTO>> findAll();
 
     public Optional<ClienteDTO> findById(Long id);
+    
+    public Optional<ClienteDTO> findByIdentificacion(String id);
 
     public ClienteDTO create(ClienteDTO cliente);
 
