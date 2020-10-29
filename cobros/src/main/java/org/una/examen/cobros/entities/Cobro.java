@@ -53,7 +53,7 @@ public class Cobro implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.NONE)
     private Date fechaVencimiento;
-    
+
     @Column(name = "tipo_servicio", length = 50)
     private String tipo;
 
@@ -61,5 +61,8 @@ public class Cobro implements Serializable {
     @JoinColumn(name = "exa_gvq_clientes_id")
     private Cliente clientesId;
 
+    public void setFechaVencimiento(Date fechaVen) {
+        this.fechaVencimiento = fechaVen;
+    }
     private static final long serialVersionUID = 1L;
 }
