@@ -23,7 +23,7 @@ public class CobroDTO {
 
     private Long id;
 
-    private int periodo;
+    private String periodo;
 
     private String anno;
 

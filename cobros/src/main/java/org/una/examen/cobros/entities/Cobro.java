@@ -40,8 +40,8 @@ public class Cobro implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private int periodo;
+    @Column(length = 20)
+    private String periodo;
 
     @Column(length = 10)
     private String anno;
