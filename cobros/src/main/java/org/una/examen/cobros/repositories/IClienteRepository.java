@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.una.examen.cobros.entities.Cliente;
-import org.una.examen.cobros.entities.Cobro;
 
 /**
  *
